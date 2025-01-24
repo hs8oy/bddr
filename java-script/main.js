@@ -171,7 +171,9 @@ function addToCart(productId) {
 
   saveCart();
   updateCart();
-  document.getElementById("floating-cart-btn").style.display = "block";
+  // عرض زر السلة عند إضافة أول منتج
+  const floatingBtn = document.getElementById("floating-cart-btn");
+  floatingBtn.style.display = "flex";
   updateFloatingCartButton();
   showCartAddedAnimation();
   showNotification("تمت إضافة المنتج إلى السلة");
@@ -181,14 +183,34 @@ function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// تعديل وظيفة loadCart
 function loadCart() {
   const savedCart = localStorage.getItem("cart");
   if (savedCart) {
-    cart.push(...JSON.parse(savedCart));
-    updateCart();
+    const parsedCart = JSON.parse(savedCart);
+    if (parsedCart && parsedCart.length > 0) {
+      cart.push(...parsedCart);
+      updateCart();
+    } else {
+      // إخفاء السلة وزر السلة إذا كانت فارغة
+      hideCartElements();
+    }
+  } else {
+    // إخفاء السلة وزر السلة إذا لم يكن هناك سلة محفوظة
+    hideCartElements();
   }
 }
 
+// إضافة وظيفة جديدة لإخفاء عناصر السلة
+function hideCartElements() {
+  const cartElement = document.getElementById("cart");
+  const floatingBtn = document.getElementById("floating-cart-btn");
+
+  cartElement.style.display = "none";
+  floatingBtn.style.display = "none";
+}
+
+// تحديث وظيفة updateCart
 function updateCart() {
   const cartElement = document.getElementById("cart");
   const cartItems = document.getElementById("cart-items");
@@ -196,14 +218,7 @@ function updateCart() {
   const floatingBtn = document.getElementById("floating-cart-btn");
 
   if (cart.length === 0) {
-    cartItems.innerHTML = `
-                    <div class="empty-cart">
-                        <img src="data:image/svg+xml,%3Csvg..."/> <!-- Add cart icon SVG here -->
-                        <p>سلة المشتريات فارغة</p>
-                    </div>
-                `;
-    cartElement.style.display = "none";
-    floatingBtn.style.display = "none";
+    hideCartElements();
     return;
   }
 
