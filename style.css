@@ -1057,33 +1057,6 @@ button:hover {
   background: var(--accent-color);
 }
 
-.visitors-counter {
-    background-color: #282e34;
-    padding: 10px;
-    text-align: center;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    max-width: 300px;
-}
 
-.counter-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-size: 1rem;
-}
-
-.counter-container i {
-    color: #2ecc71;
-    font-size: 1.3rem;
-}
-
-.counter-number {
-    font-weight: bold;
-    color: #fefefe;
-    font-size: 1.4rem;
-}
 
 
