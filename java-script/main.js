@@ -482,26 +482,21 @@ function formatWhatsAppMessage(cart, total, grandTotal, customerInfo) {
     })
     .join("\n\n");
 
-  return `*📦 طلب جديد من متجر بدر للعطور*
+  return `
+  *👤 معلومات العميل:*
+• الاسم: ${customerInfo.name}
+• رقم الهاتف: ${customerInfo.phone}
+• المحافظة: ${customerInfo.governorate}
+• المنطقة: ${customerInfo.area}
+• نقطة دالة: ${customerInfo.landmark}
 ══════════════════════
-*📝 تفاصيل الطلب:*
 ${itemDetails}
-
-*💰 ملخص الطلب:*
 ══════════════════════
 • المجموع: ${formatNumber(cartTotal)}دينار 
 • رسوم التوصيل: ${formatNumber(deliveryFee)}دينار 
 • المجموع الكلي: *${formatNumber(finalTotal)}دينار* 
 
-*👤 معلومات العميل:*
-══════════════════════
-• الاسم: ${customerInfo.name}
-• المحافظة: ${customerInfo.governorate}
-• المنطقة: ${customerInfo.area}
-• نقطة دالة: ${customerInfo.landmark}
-• رقم الهاتف: ${customerInfo.phone}
-
-*شكراً لثقتكم بنا* 🌹`;
+`;
 }
 
 function applyFilters() {
