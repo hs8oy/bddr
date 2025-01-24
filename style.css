@@ -187,12 +187,15 @@ body {
   margin: 20px 0;
 }
 
+
 .product-card {
   background: white;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  height: auto;
+  min-height: 380px;
 }
 
 .product-card:hover {
@@ -1053,3 +1056,5 @@ button:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
 }
+
+
