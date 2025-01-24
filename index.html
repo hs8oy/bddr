@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="هـنـا اسـعـار كـل تـقـاسـيـم مـتـجـر BDR"
+    />
+    <meta
+      name="keywords"
+      content="عطور, عطور نسائية, عطور رجالية, عطور للجنسين, عطور اصلية, عطور نيش, عطور ديزاينر , bdr, بدر للعطور"
+    />
+    <meta name="author" content="hs8oy" />
+    <title>مـتـجـر بـدر للـعـطـور</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link in icon -->
+    <link rel="icon" href="imgs/logo/1.png" />
+    <!-- link in css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- link in font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="store-header">
+      <div class="container-1">
+        <div><h1>موقع بـدر للـعـطـور</h1></div>
+        <div>
+          <a href="./"><img class="i" src="imgs/logo/1.png" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="category-selector">
+        <h3>اختر الفئة</h3>
+        <div class="category-buttons">
+          <button class="category-btn active" onclick="filterByCategory('all')">
+            جميع العطور
+          </button>
+          <button class="category-btn" onclick="filterByCategory('men')">
+            عطور رجالية
+          </button>
+          <button class="category-btn" onclick="filterByCategory('women')">
+            عطور نسائية
+          </button>
+          <button class="category-btn" onclick="filterByCategory('unisex')">
+            عطور للجنسين
+          </button>
+        </div>
+      </div>
+      <div class="search-box">
+        <input
+          type="search"
+          placeholder="ابحث عن العطور..."
+          onkeyup="applyFilters()"
+        />
+      </div>
+
+      <div class="results-info"><span id="products-count">0</span> منتج</div>
+
+      <div id="products" class="products">
+        <div class="loading">جاري تحميل المنتجات...</div>
+      </div>
+      <div id="cart" class="cart" style="display: none">
+        <h2>سلة التسوق</h2>
+        <div id="cart-items"></div>
+        <div id="cart-summary"></div>
+        <form id="checkout-form" class="checkout-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="الاسم الكامل"
+            required
+            class="required"
+          />
+          <select id="governorate" name="governorate" required class="required">
+            <option value="">اختر المحافظة</option>
+          </select>
+          <input
+            type="text"
+            name="area"
+            placeholder="المنطقة"
+            required
+            class="required"
+          />
+          <input
+            type="text"
+            name="landmark"
+            placeholder="نقطة دالة"
+            required
+            class="required"
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="07xxxxxxxxx"
+            class="phone-input required"
+            required
+            pattern="07[0-9]{9}"
+            maxlength="11"
+          />
+          <button type="submit" id="submit-btn">اتمام الشراء</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <div class="loading-overlay" id="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="scroll-top" onclick="scrollToTop()">↑</div>
+
+    <div id="imageModal" class="product-modal">
+      <span class="close-modal" onclick="closeModal()">×</span>
+      <div class="modal-content">
+        <img id="modalImage" class="modal-image" />
+        <div id="modalDetails" class="product-details"></div>
+      </div>
+    </div>
+
+    <div class="floating-cart-btn" id="floating-cart-btn" onclick="showCart()">
+      عرض سلة المشتريات
+      <span class="badge">0</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>تواصل معنا</h3>
+          <p>
+            <strong>
+              موقع تقسيم العطور الاصلية النيش واليدزاينر <br />
+              لا نتعامل بالعطور التقليد والكوبي ماستر <br />
+              متوفر توصيل لكافة المحافظات 5000 دينار
+            </strong>
+            <br />
+            <br />
+            3 مل 50 رشة <br />
+            5 مل 100 رشة <br />
+            10 مل 190 رشة
+          </p>
+          <p>توضيح : الاسعار داخل الموقع بـ الدينار العراقي</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>تواصل معنا</h3>
+
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/profile.php?id=61566320968504&mibextid=ZbWKwL"
+              title="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/bdrparfum1?igsh=MXNmZHIxbWR0eXl2bA=="
+              title="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://api.whatsapp.com/send?phone=9647707458798"
+              title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@bdrparfum1?_t=ZS-8tKTn4vAmBT&_r=1"
+              title="Tiktok"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+          <br />
+          <p>
+            الهاتف: <a type="tel" href="tel:+9647707458798">8978 547 0770</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2025 - بدر للعطور</p>
+        <img class="i" src="imgs/logo/1.png" />
+      </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="java-script/pro.js"></script>
+    <script src="java-script/main.js"></script>
+  </body>
+</html>
