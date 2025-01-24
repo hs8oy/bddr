@@ -1312,21 +1312,9 @@ const products = [
     description:
       "Imagination Louis Vuitton عطر حمضيات - أروماتك للرجال . Imagination صدر عام 2021. Jacques Cavallier Belletrud قام بتوقيع هذا العطر. إفتتاحية العطر الحامض, برغموت كالابريا و البرتقال الصقلي; قلب العطر زهر البرتقال التونسي, الزنجبيل النبجبري و قرفة سيلان; قاعدة العطر تتكون من الشاي الصيني الأسود, الأمبروكسان, أخشاب الغاياك و اللبان.",
   },
+  
   {
     id: 101,
-    img: "imgs/shoping/103.jpg",
-    name: "ايما جنيشن",
-    category: "men",
-    sizes: {
-      "10ml": 80000,
-      "5ml": 45000,
-      "3ml": 30000,
-    },
-    description:
-      "Imagination Louis Vuitton عطر حمضيات - أروماتك للرجال . Imagination صدر عام 2021. Jacques Cavallier Belletrud قام بتوقيع هذا العطر. إفتتاحية العطر الحامض, برغموت كالابريا و البرتقال الصقلي; قلب العطر زهر البرتقال التونسي, الزنجبيل النبجبري و قرفة سيلان; قاعدة العطر تتكون من الشاي الصيني الأسود, الأمبروكسان, أخشاب الغاياك و اللبان.",
-  },
-  {
-    id: 102,
     img: "imgs/shoping/7.jpg",
     name: "رين ايتات انتنس انسنس",
     category: "unisex",
@@ -1339,7 +1327,7 @@ const products = [
       "عطر رين انتنس انسنس Eau De Parfum لكلا الجنسين من Etat Libre d'Orange، عطر شرقي - تابلي، مزيج مميز من البخور، الجلود، ، الباتشولي، السوسن، العنبر والورد.",
   },
   {
-    id: 103,
+    id: 102,
     img: "imgs/shoping/23.webp",
     name: "عود وود توم فورد",
     category: "unisex",
@@ -1352,7 +1340,7 @@ const products = [
       "Oud Wood Tom Ford عطر شرقي - خشبي للجنسين. Oud Wood صدر عام 2007. Richard Herpin قام بتوقيع هذا العطر.",
   },
   {
-    id: 104,
+    id: 103,
     img: "imgs/shoping/48.jpg",
     name: "فالنتينو اومو بورن ان روما",
     category: "men",
@@ -1363,6 +1351,58 @@ const products = [
     },
     description:
       "Valentino Uomo Born in Roma Valentino عطر خشبي - حار للرجال . Valentino Uomo Born in Roma صدر عام 2019. Valentino Uomo Born in Roma من توقيع Antoine Maisondieu و Guillaume Flavigny. إفتتاحية العطر الأملاح المعدنية, أوراق البنفسج و الملح; قلب العطر الزنجبيل و المريمية; قاعدة العطر تتكون من الأخشاب و نجيل الهند.",
+  },
+  {
+    id: 104,
+    img: "imgs/shoping/105.jpg",
+    name: "BDK روج سموكنك",
+    category: "unisex",
+    sizes: {
+      "10ml": 35000,
+      "5ml": 18000,
+      "3ml": 13000,
+    },
+    description:
+      "Rouge Smoking BDK Parfums عطر شرقي للجنسين. Rouge Smoking صدر عام 2018. Amelie Bourgeois قام بتوقيع هذا العطر. إفتتاحية العطر الكرز, الفلفل الوردي و البرغموت; قلب العطر قشور الفانيليا السوداء, الهيلوتروب و زهر البرتقال; قاعدة العطر تتكون من حبوب التونكا, أخشاب الكشمير, المسك الأبيض, الأمبروكسان, البنفسج و اللابدانوم.",
+  },
+  {
+    id: 105,
+    img: "imgs/shoping/106.jpg",
+    name: "فالنتينو دونا بورن ان روما انتنس",
+    category: "women",
+    sizes: {
+      "10ml": 35000,
+      "5ml": 13000,
+      "3ml": 9000,
+    },
+    description:
+      "Valentino Donna Born In Roma Intense Valentino عطر شرقي - زهري للنساء . هذا عطر جديد Valentino Donna Born In Roma Intense صدر عام 2023. Valentino Donna Born In Roma Intense من توقيع Amandine Clerc-Marie و Honorine Blanc. إفتتاحية العطر فانيليا بوربون و العنبر; قلب العطر الياسمين; قاعدة العطر من البنزوين - الجاوي.",
+  },
+  {
+    id: 106,
+    img: "imgs/shoping/107.jpg",
+    name: "تيري هيرمس انتنس فيتيفر",
+    category: "men",
+    sizes: {
+      "10ml": 22000,
+      "5ml": 11000,
+      "3ml": 8000,
+    },
+    description:
+      "عطر تيريه دو هرمز Eau Intense للرجال من ماركة Hermès، تركيبة مركزة بثباتية عالية من اصدار سنة 2018، بنوتات زهرة إبرة الراعي، فلفل سيشوان، الباتشولي وخشب العنبر",
+  },
+  {
+    id: 107,
+    img: "imgs/shoping/108.jpg",
+    name: "غوتشي انتنس عود",
+    category: "unisex",
+    sizes: {
+      "10ml": 28000,
+      "5ml": 15000,
+      "3ml": 10000,
+    },
+    description:
+      "Intense Oud Gucci عطر شرقي للجنسين. Intense Oud صدر عام 2016. Aurélien Guichard قام بتوقيع هذا العطر. إفتتاحية العطر لبان, توت العليق, الزعفران و الكمثري; قلب العطر الورد الدمشقي, المسك و زهر البرتقال; قاعدة العطر تتكون من العود, الجلود, الآمبرغريس و الباتشولي.",
   },
 
   // Add more products here
