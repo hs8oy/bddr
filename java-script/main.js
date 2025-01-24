@@ -706,3 +706,25 @@ function showCartAddedAnimation() {
 // Load cart on page load
 loadCart();
 renderProducts();
+
+/* filepath: /C:/Users/ASUS/Desktop/BDR-2/java-script/main.js */
+// إضافة كود عداد الزيارات
+document.addEventListener('DOMContentLoaded', function() {
+  // جلب عدد الزيارات من localStorage
+  let visits = localStorage.getItem('visitCount');
+  
+  // إذا لم يكن هناك عدد زيارات مسجل، ابدأ من 1
+  if (!visits) {
+      visits = 1;
+  } else {
+      // إذا كان هناك عدد زيارات مسجل، قم بزيادته
+      visits = parseInt(visits) + 1;
+  }
+  
+  // حفظ العدد الجديد في localStorage
+  localStorage.setItem('visitCount', visits);
+  
+  // عرض العدد في الصفحة
+  const visitCounter = document.getElementById('visitCounter');
+  visitCounter.textContent = visits.toLocaleString('ar-EG'); // تنسيق الرقم بالعربية
+});
