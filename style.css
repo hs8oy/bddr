@@ -83,6 +83,10 @@ body {
     width: 400px;
     height: 400px;
   }
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
 }
 @media (max-width: 410px) {
   .slider-container {
@@ -1111,6 +1115,53 @@ button:hover {
   .floating-cart-btn {
     padding: 12px 20px;
     font-size: 0.9em;
+  }
+}
+@media (max-width: 420px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 5px;
+  }
+
+  .product-card {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .product-image img {
+    height: 70px;
+  }
+
+  .category-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .store-header h1 {
+    font-size: 1.3em;
+  }
+
+  .category-btn {
+    padding: 4px 6px;
+    font-size: 0.9em;
+  }
+
+  .floating-cart-btn {
+    padding: 12px 20px;
+    font-size: 0.9em;
+  }
+
+  .product-card h3 {
+    font-size: 1em;
+  }
+
+  .product-description {
+    font-size: 0.5em;
+  }
+  .size-select {
+    font-size: 12px;
+  }
+  .product-card button {
+    font-size: 10px;
   }
 }
 
