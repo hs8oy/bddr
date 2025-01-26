@@ -40,6 +40,16 @@
       </div>
     </div>
 
+    <div class="slider-container">
+      <img id="slider-image" src="imgs/logo/1.png" alt="صورة" />
+      <div id="image-info">
+        <h3 id="image-title">هلا والله</h3>
+        <br />
+        <p id="image-description"></p>
+      </div>
+    </div>
+    <div class="slider-controls" id="slider-dots"></div>
+
     <div class="container">
       <div class="category-selector">
         <h3>اختر الفئة</h3>
@@ -135,7 +145,7 @@
       style="display: none"
       onclick="showCart()"
     >
-        المشتريات
+      المشتريات
       <span class="badge">0</span>
     </div>
 
@@ -192,18 +202,86 @@
           </p>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p>جميع الحقوق محفوظة © 2025 - بدر للعطور</p>
         <img class="i" src="imgs/logo/1.png" />
-        
-        
       </div>
     </footer>
 
-    
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="java-script/pro.js"></script>
     <script src="java-script/main.js"></script>
+    <script>
+      const images = [
+        {
+          src: "imgs/slid/الليل.png",
+          title: "فريدريك مال الليل",
+          description:
+            "The Night Frederic Malle عطر شرقي - خشبي للجنسين. The Night صدر عام 2014. Dominique Ropion قام بتوقيع هذا العطر. إفتتاحية العطر الورد التركي و الزعفران; قلب العطر العود الهندى; قاعدة العطر تتكون من العنبر, البخور و خشب الصندل.",
+        },
+        {
+          src: "imgs/slid/يو.webp",
+          title: "يو انتنس",
+          description:
+            " عطر شرقي - فوجير للرجال .  صدر عام 2019. إفتتاحية العطر الفلفل الوردي, العرعر و البنفسج; قلب العطر الطوفي, القرفة, الخزامي و المريمية; قاعدة العطر تتكون من الفانيليا, العنبر, حبوب التونكا و جلد الغزال (الجلد المدبوغ)",
+        },
+        {
+          src: "imgs/shoping/93.jpg",
+          title: "هالفيتي سيدر  ",
+          description:
+            "Halfeti Penhaligon's عطر شرقي - خشبي للجنسين. Halfeti صدر عام 2015. Christian Provenzano قام بتوقيع هذا العطر. إفتتاحية العطر أوراق السرو, الزعفران, الهيل, الشيح, البرغموت و الجريب فروت; قلب العطر الورد البلغاري, جوزه الطيب و الياسمين; قاعدة العطر تتكون من العود, خشب الأرز, الجلود, خشب الصندل, العنبر, حبوب التونكا, الفانيليا و المسك.",
+        },
+        {
+          src: "imgs/shoping/1.jpg",
+          title: " جان بول اليكسير  ",
+          description:
+            "عطر لو ميل إكسير Eau De Parfum للرجال من ماركة Jean Paul Gaultier، بسعة 125 مل، بتركيبة ذات ثباتية عالية بنوتات الخزامي، الفانيليا والعسل.",
+        },
+      ];
+
+      const sliderImage = document.getElementById("slider-image");
+      const imageTitle = document.getElementById("image-title");
+      const imageDescription = document.getElementById("image-description");
+      const sliderDots = document.getElementById("slider-dots");
+      let currentIndex = 0;
+
+      // Create dot indicators
+      images.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => changeImage(index));
+        sliderDots.appendChild(dot);
+      });
+
+      function changeImage(index) {
+        // Update active dot
+        document.querySelectorAll(".dot").forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+
+        // Fade out effect
+        sliderImage.style.opacity = 0;
+        sliderImage.style.transform = "scale(0.9)";
+
+        setTimeout(() => {
+          currentIndex = index;
+          sliderImage.src = images[currentIndex].src;
+          imageTitle.textContent = images[currentIndex].title;
+          imageDescription.textContent = images[currentIndex].description;
+
+          // Fade in effect
+          sliderImage.style.opacity = 1;
+          sliderImage.style.transform = "scale(1)";
+        }, 500);
+      }
+
+      // Auto-change every 5 seconds
+      setInterval(() => {
+        const nextIndex = (currentIndex + 1) % images.length;
+        changeImage(nextIndex);
+      }, 9000);
+    </script>
   </body>
 </html>
