@@ -6,11 +6,14 @@ ScrollReveal().reveal(".container", {
 });
 
 ScrollReveal().reveal(".products", {
-  duration: 4000, // مدة الحركة
+  duration: 3000, // مدة الحركة
   origin: "bottom", // اتجاه الحركة
   distance: "80px", // المسافة
-  delay: 400, // التأخير
+  delay: 300, // التأخير
 });
+//
+
+//
 
 const cart = [];
 const deliveryFee = 5000;
@@ -707,4 +710,24 @@ function showCartAddedAnimation() {
 loadCart();
 renderProducts();
 
+/* filepath: /C:/Users/ASUS/Desktop/BDR-2/java-script/main.js */
+// إضافة كود عداد الزيارات
+document.addEventListener("DOMContentLoaded", function () {
+  // جلب عدد الزيارات من localStorage
+  let visits = localStorage.getItem("visitCount");
 
+  // إذا لم يكن هناك عدد زيارات مسجل، ابدأ من 1
+  if (!visits) {
+    visits = 1;
+  } else {
+    // إذا كان هناك عدد زيارات مسجل، قم بزيادته
+    visits = parseInt(visits) + 1;
+  }
+
+  // حفظ العدد الجديد في localStorage
+  localStorage.setItem("visitCount", visits);
+
+  // عرض العدد في الصفحة
+  const visitCounter = document.getElementById("visitCounter");
+  visitCounter.textContent = visits.toLocaleString("ar-EG"); // تنسيق الرقم بالعربية
+});
