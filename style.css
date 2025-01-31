@@ -337,7 +337,6 @@ body {
   width: 100%;
   padding: 12px;
   border-radius: 6px;
-  font-weight: 500;
   transition: all 0.3s ease;
 }
 
@@ -363,8 +362,9 @@ button {
 }
 
 button {
-  background: linear-gradient(100deg, #373420, #ba9832);
-  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background: var(--primary-color);
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
 }
